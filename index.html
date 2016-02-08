@@ -1,0 +1,95 @@
+<html>
+<head>
+  <title>Knockout Cart</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+</head>
+<body>
+
+<!--Bootstrap Navbar-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Knockout Cart</a>
+      </div>
+      <div class="aboutHeader">
+        Created by <a href="https://www.linkedin.com/in/matthew-thrasher-9778a220
+        ">Matt Thrasher</a> in <a href="http://knockoutjs.com/">Knockout.js</a> for <a href="https://www.itm21st.com/"
+        > itm21st</a>
+      </div>
+    </div>
+  </nav>
+
+<!--Shopping Cart-->
+  <div class="container">
+    <div class="table-responsive">
+      <table width='100%'>
+        <thead>
+          <tr>
+            <th class='name' width='25%'>Name</th>
+            <th class='price' width='15%'>Quantity</th>
+            <th class='quantity' width='10%'>Price</th>
+            <th class='subtotalHead' width='15%'>Subtotal</th>
+            <th width='10%'> </th>
+          </tr>
+        </thead>
+
+        <!--Render each item in the cart. Sort the cart via the compareByProductName function which alphabetizes cart items by name -->
+        <tbody data-bind="foreach: lines().sort(compareByProductName)">
+           <tr>
+            <!--Item name-->
+            <td class='name'>
+              <p data-bind="css: { error: name.hasError }">
+                <input data-bind='value: name' class="form-control" />
+              </p>
+            </td>
+
+            <!--Item quantity-->
+            <td class='quantity'>
+              <p data-bind="css: { error: quantity.hasError }">
+                <input data-bind='value: quantity, valueUpdate: "afterkeydown"' class="form-control" min="0" step="0.25" />
+              </p>
+            </td>
+
+            <!--Item price-->
+            <td class='price'>
+               <p data-bind="css: { error: price.hasError }">
+                <input data-bind='value: price, valueUpdate: "afterkeydown"' class="form-control" min="0" step="1.00"/>
+              </p>
+            </td>
+
+            <!--Item subtotal-->
+            <td class='subtotal'>
+              <h4><span data-bind='visible: price, text: subtotal' class="label label-pill label-warning"> </span></h4>
+            </td>
+
+            <!--Remove item-->
+
+            <td>
+              <button type="button" class="btn btn-danger remove" data-bind='click: $parent.removeLine'>Remove</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--Grand total-->
+<p class='grandTotal'>
+  <h3><span class="label label-pill label-warning">Grand Total: <span data-bind='text: formatCurrency(grandTotal())'> </span></h3></span>
+</p>
+
+<!--Add another button-->
+<button type="button" class="btn btn-primary" data-bind='click: addLine'>Add another item</button>
+
+</div>
+
+
+<!--Javascript Assets-->
+<script src="scripts/jquery-1.11.2.min.js"></script>
+<script src="scripts/knockout-3.2.0.js"></script>
+<script src="scripts/knockout-validation-2.0.3.js"></script>
+<script src="scripts/CartModel.js"></script>
+
+
+</body>
+</html>

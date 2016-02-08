@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Raleway:800);
+
+
+.navbar {
+	font-family: 'Raleway', sans-serif;
+}
+.error {
+	color: red;
+
+	border-width: 1px;
+	border-style: solid;
+	}
+
+.container {
+	width: 95%;
+	background-color: #C7E1E0;
+	margin-top: 25px;
+	border-radius: 10px 10px 10px 10px;
+	font-family: 'Roboto Condensed', sans-serif;
+
+
+}
+
+.aboutHeader {
+	margin-top:15px;
+	float:right;
+}
+
+
+
+.form-control {
+	width: 50%;
+}
+
+.name, .quantity, .price, .subtotalHead {
+	padding-right: 10px;
+	padding-top: 40px;
+}
+
+.subtotal {
+	padding-top: 30px;
+	padding-left: 3%;
+}
+
+.subtotalHead {
+	padding-left: 3%;
+}
+
+.remove {
+	margin-top: 40px;
+}
+
+
+
+.grandTotal {
+	margin-top: 50px;
+	width:100%;
+	border-top-style: dotted;
+	border-top-width: 1px;
+	border-top-color: black;
+
+}
+
+.btn.btn-primary {
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.validationMessage {
+
+	color: #fff; 
+  	background: #1496bb;
+	position: absolute;
+	margin-top: 10px;
+	z-index: 1;
+	padding: 5px;
+	border-radius: 10px 10px 10px 10px;
+	opacity: .4;
+
+}
